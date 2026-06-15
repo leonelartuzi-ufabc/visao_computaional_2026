@@ -18,7 +18,7 @@ while True:
     # Display the resulting frame
     cv.imshow('frame', frame)
     if cv.waitKey(1) == ord('x'):
-        cv.imwrite('foto1.png',frame)
+        cv.imwrite('imagem2.png',frame)
         
         
     if cv.waitKey(1) == ord('q'):

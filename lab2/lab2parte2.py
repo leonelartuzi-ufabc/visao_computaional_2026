@@ -22,8 +22,8 @@ while cap1.isOpened() and cap2.isOpened():
         print("Erro ao capturar os quadros.")
         break
 
-    kp1, des1 = sift.detectAndCompute(cap1,None)
-    kp2, des2 = sift.detectAndCompute(cap2,None)
+    kp1, des1 = sift.detectAndCompute(frame1,None)
+    kp2, des2 = sift.detectAndCompute(frame2,None)
 
     
     # Exibe os feeds em janelas separadas
