@@ -1,9 +1,11 @@
 import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
+import time 
+
 
 MIN_MATCH_COUNT = 10
-
+FPS=10
 
 cap1 = cv.VideoCapture(0)
 cap2 = cv.VideoCapture(1)
@@ -13,6 +15,8 @@ while cap1.isOpened() and cap2.isOpened():
     ret1, frame1 = cap1.read()
     ret2, frame2 = cap2.read()
 
+    if cv.waitKey(1) == ord('q'):
+        break
 
     if not ret1 or not ret2:
         print("Erro ao capturar os quadros.")
@@ -64,6 +68,7 @@ while cap1.isOpened() and cap2.isOpened():
     img3 = cv.drawMatches(frame1,kp1,frame2,kp2,good,None,**draw_params)
     
     plt.imshow(img3, 'gray'),plt.show()
+    time.sleep(1/FPS)
 # Initiate SIFT detector
 
 
